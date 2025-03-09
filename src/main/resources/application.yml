@@ -1,0 +1,36 @@
+server:
+  # 应用服务 WEB 访问端口
+  port: 8080
+spring:
+  datasource:
+# :begin(h2数据库配置-1)
+    #创建表的MySql语句位置
+    schema: classpath:schema.sql
+    #插入数据的MySql语句的位置
+    data: classpath:data.sql
+# :end(h2数据库配置-1)
+
+# :begin(h2数据库配置-3)
+    #指定数据库的种类，这里 file意思是文件型数据库
+    url: jdbc:h2:file:~/test
+    #用户名密码不需要改，都是临时值
+    username: san
+    password:
+    #指定Driver，有了Driver才能访问数据库
+    driver-class-name: org.h2.Driver
+# :end(h2数据库配置-3)
+
+# :begin(h2数据库配置-2)
+  h2:
+    console:
+      settings:
+        #remote visit
+        web-allow-others: true
+        # h2 console 中可输出 trace 级别的日志信息
+        trace: true
+      #console url。Spring启动后，可以访问 http://127.0.0.1:8080/h2-console 查看数据库
+      path: /h2-console
+      #default true。相关文档 http://www.h2database.com/html/tutorial.html?highlight=Mac&search=mac#firstFound
+      #让用户可访问 h2 console
+      enabled: true
+# :end(h2数据库配置-2)
