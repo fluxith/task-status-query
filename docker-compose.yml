@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  rabbitmq:
+    image: 'rabbitmq:management-alpine'
+    environment:
+      - RABBITMQ_DEFAULT_PASS=tsqAdmin
+      - RABBITMQ_DEFAULT_USER='l\'EVtZO2Zm3=U4^6'
+    ports:
+      - '15672:15672'
+      - '5672:5672'
+  redis:
+    image: redis:alpine  # 使用官方Redis镜像（alpine版更轻量）
+    restart: always
+    ports:
+      - "6379:6379"
