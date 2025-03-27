@@ -2,9 +2,10 @@ version: '3.9'
 services:
   rabbitmq:
     image: 'rabbitmq:management-alpine'
+    restart: always
     environment:
-      - RABBITMQ_DEFAULT_PASS=tsqAdmin
-      - RABBITMQ_DEFAULT_USER='l\'EVtZO2Zm3=U4^6'
+      - RABBITMQ_DEFAULT_USER=tsqAdmin
+      - RABBITMQ_DEFAULT_PASS=EVtZO2Zm3=U4^6
     ports:
       - '15672:15672'
       - '5672:5672'
@@ -13,3 +14,6 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    environment:
+      - REDIS_MAXMEMORY=1gb          # 设置最大内存为 1GB
+      - REDIS_MAXMEMORY_POLICY=allkeys-lru  # 设置淘汰策略为 allkeys-lru :淘汰所有键（LRU 算法）。适合纯缓存场景，所有数据均可被淘汰。
