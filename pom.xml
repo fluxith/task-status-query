@@ -12,37 +12,44 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.0.2</spring-boot.version>
-        <cola.components.version>4.3.2</cola.components.version>
+        <cola.components.version>5.0.0</cola.components.version>
     </properties>
     <dependencies>
         <!-- COLA Framework -->
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-dto</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-exception</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-catchlog-starter</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-domain-starter</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-extension-starter</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-statemachine</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-test-container</artifactId>
+            <version>${cola.components.version}</version>
         </dependency>
         <!-- COLA Framework End-->
         <!-- rabbit -->
@@ -108,14 +115,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.alibaba.cola/cola-components-bom -->
-            <dependency>
-                <groupId>com.alibaba.cola</groupId>
-                <artifactId>cola-components-bom</artifactId>
-                <version>${cola.components.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
