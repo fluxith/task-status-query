@@ -32,6 +32,34 @@ knife4j:
   setting:
     language: zh_cn
 spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms         # 连接超时时间
+    lettuce:
+      pool:
+        max-active: 8       # 连接池最大连接数
+        max-idle: 8         # 连接池最大空闲连接数
+        min-idle: 2         # 连接池最小空闲连接数
+        max-wait: 1000ms    # 连接等待时间
+  rabbitmq:
+    host: localhost
+    port: 5672        # 默认端口
+    username: tsqAdmin   # 默认用户名
+    password: EVtZO2Zm3=U4^6   # 默认密码
+    virtual-host: /   # 虚拟主机
+    
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 10  # 每次预取消息数量
+        retry:
+          enabled: true          # 开启本地重试
+          max-attempts: 10       # 最大重试次数（含首次消费）
+          initial-interval: 2s  # 初始重试间隔
+          multiplier: 2         # 间隔倍数（下次重试时间=前次间隔×multiplier）
+          max-interval: 1h      # 最大重试间隔（避免间隔无限增长）
+          stateless: true       # 无状态模式（适用于无事务场景）
   datasource:
 # :begin(h2数据库配置-1)
     #创建表的MySql语句位置

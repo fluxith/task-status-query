@@ -13,7 +13,7 @@ import com.alibaba.cola.dto.SingleResponse;
 import com.github.indeednb.taskstatusquery.application.executor.TaskProsessCmdExe;
 import com.github.indeednb.taskstatusquery.application.executor.query.TaskByIdQryExe;
 import com.github.indeednb.taskstatusquery.application.executor.query.TaskListQryExe;
-import com.github.indeednb.taskstatusquery.client.dto.TaskProsessCmd;
+import com.github.indeednb.taskstatusquery.client.dto.TaskAddCmd;
 import com.github.indeednb.taskstatusquery.client.dto.co.TaskCO;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,7 +46,7 @@ public class TaskController {
 
     @Operation(summary = "提交任务处理请求")
     @PostMapping("/process")
-    public Response process(@RequestBody TaskProsessCmd taskProsessCmd){
+    public Response process(@RequestBody TaskAddCmd taskProsessCmd){
         return taskProsessCmdExe.execute(taskProsessCmd);
     }
 }

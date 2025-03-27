@@ -8,7 +8,8 @@ package com.github.indeednb.taskstatusquery.client.dto.co;
  */
 public enum ErrorCode {
 
-    B_TASK_alreadyExists("B_TASK_ALREADY_EXISTS", "任务已存在");
+    B_TASK_alreadyExists("B_TASK_ALREADY_EXISTS", "任务已存在"),
+    S_TASK_ID_IS_EMPTY("S_TASK_ID_IS_EMPTY", "任务id为空");
 
     private final String errCode;
     private final String errDesc;

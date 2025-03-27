@@ -8,4 +8,5 @@ public class TaskCO {
     private String name;
     private String description;
     private String status;
+    private Integer progress;
 }
