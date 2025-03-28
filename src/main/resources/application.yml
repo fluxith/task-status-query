@@ -6,7 +6,7 @@ logging:
 # 设置全局日志级别
   level:
     root: INFO
-    com.github.indeednb.taskstatusquery: DEBUG
+    com.github.fluxith.taskstatusquery: DEBUG
     org.springframework: WARN
     # spring MVC 的日志（包括请求与响应日志）
     org.springframework.web: DEBUG
@@ -25,7 +25,7 @@ springdoc:
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
-      packages-to-scan: com.github.indeednb.taskstatusquery.adapter
+      packages-to-scan: com.github.fluxith.taskstatusquery.adapter
 # knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true
